@@ -370,6 +370,9 @@ pub mod thread_local;
 
 pub use odbc_type::StringUtf16;
 
+#[cfg(feature = "derive")]
+pub use derive::SqlStruct;
+
 /// ODBC library initialization and connection errors.
 #[derive(Debug)]
 pub struct OdbcError(Option<DiagnosticRecord>, &'static str);
