@@ -13,6 +13,8 @@ edition = "2018"
 
 [features]
 default = ["chrono"]
+derive = ["dep:derive"]
+
 test-hive = []
 test-sql-server = []
 test-monetdb = []
@@ -29,6 +31,7 @@ chrono = { version = "0.4.23", optional = true }
 serde = { version = "1.0.152", optional = true }
 serde_json = { version = "1.0.93", optional = true }
 rust_decimal = { version = "1.28.1", optional = true }
+derive = { path = "../derive" ,optional = true}
 
 [dev-dependencies]
 assert_matches = "1.5.0"
