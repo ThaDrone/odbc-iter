@@ -1,0 +1,38 @@
+[package]
+name = "odbc-iter"
+version = "0.2.7"
+authors = ["Jakub Pastuszek <jpastuszek@protonmail.com>"]
+description = "High level database access library based on 'odbc' crate that uses native ODBC drivers to access variety of databases"
+repository = "https://github.com/jpastuszek/odbc-iter"
+documentation = "https://docs.rs/odbc-iter"
+readme = "README.md"
+keywords = ["odbc", "orm", "database"]
+categories = ["database"]
+license = "MIT"
+edition = "2018"
+
+[features]
+default = ["chrono"]
+derive = ["dep:derive"]
+
+test-hive = []
+test-sql-server = []
+test-monetdb = []
+# If set stats are collected and available via odbc_iter::stats()
+statistics = []
+
+[dependencies]
+odbc = "0.13.0"
+regex = "1.7.1"
+lazy_static = "1.4.0"
+log = "0.4.17"
+error-context = "0.1.2"
+chrono = { version = "0.4.23", optional = true }
+serde = { version = "1.0.152", optional = true }
+serde_json = { version = "1.0.93", optional = true }
+rust_decimal = { version = "1.28.1", optional = true }
+derive = { path = "../derive" ,optional = true}
+
+[dev-dependencies]
+assert_matches = "1.5.0"
+serde_json = "1.0.93"
