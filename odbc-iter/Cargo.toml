@@ -22,7 +22,7 @@ test-monetdb = []
 statistics = []
 
 [dependencies]
-odbc = "0.13.0"
+odbc = "0.14.0"
 regex = "1.7.1"
 lazy_static = "1.4.0"
 log = "0.4.17"
