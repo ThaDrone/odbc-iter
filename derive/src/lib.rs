@@ -70,8 +70,7 @@ pub fn sql_struct_derive(input: TokenStream) -> TokenStream {
                         "Field names do not match! Expected {}, found {} instead.", field, column_name);
 
                     // Grab the value from the result
-                    // TODO make error more descriptive
-                    let #field_names = <#field_types>::try_from_column(column).expect("Conversion errror");
+                    let #field_names = <#field_types>::try_from_column(column).expect(format!("Conversion error for field {field}"));
                 )*
 
                 Ok(Self {
